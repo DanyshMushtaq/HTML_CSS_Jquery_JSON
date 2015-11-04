@@ -1,0 +1,195 @@
+<html>
+<head>
+<title>Think_Tank</title>
+<link rel="stylesheet" href="styles.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--td:hover {
+          background-color: #FF9900;
+    }-->
+<style>
+
+</style>
+<link  href="jq_css.css" type="text/css" rel="stylesheet">
+<script src="jq.js"  type="text/javascript" ></script>
+<script src="jq_mob.js"  type="text/javascript"></script>
+</head>
+<body>
+
+<div data-role="page" id="first" class="ui-page">
+<div data-role="panel" id="myPanel" data-position="right"> 
+    <form method="post" action="mailto:dnshmushtaq1@gmail.com">
+      <div class="ui-field-contain">
+        Full name:<br/>
+        <input type="text" name="fullname" id="fullname"><br/>      
+        Your opinions:<br/>
+        <textarea name="textarea" id="area" rows="10" cols="40"></textarea><br/>
+        E-mail:<br/>
+        <input type="email" name="email" id="email" placeholder="Your email.."><br/>
+      </div>
+      <input type="submit" data-inline="true" value="Submit"  data-rel="close">
+    </form>
+  </div> 
+
+<div data-role="header" class="ui-header" id="one">
+<p style="text-align:center;">Think Tank
+<img src="images/logo.jpg" alt="img" id="logo_img" >
+</p>
+</div>
+<div data-role="main" class="ui-content" id="con"> 
+<div id="contain_nav">
+<div data-role="navbar">
+      <ul id="lists">
+	    <li><a href="#">Home</a></li>
+        <li><a href="http">Nature</a></li>
+        <li><a href="#technology">Technology</a></li>
+		<li><a href="http://http://www.humanrights.com">Rights</a></li>
+		<li><a href="#myPanel">Forum</a></li>
+      </ul>
+</div>
+</div>
+  
+
+
+<div id="links">
+<a href="#" data-role="button" 
+ data-mini="true" class="ui-disabled" data-theme="b" 
+ data-icon="gear" data-iconpos="none" style="margin-right:50%">
+Breaking on the Planet</a>
+<a href="http://www.facebook.com" data-role="button"  data-mini="true">fb</a>
+<a href="http://www.twitter.com" data-role="button"  data-mini="true">twitter</a>
+<a href="http://www.youtube.com" data-role="button"  data-mini="true">Youtube</a>
+</div>
+<div id="container">
+<div class="fadein">
+    <div id="x0"><img id='img0' ><div style="color:white" id="txt"> I m white </div></div>
+    <div id="x1"><img id='img1' ></div>
+    <div id="x2"><img id='img2' ></div>
+	   <div id="x3"><img id='img3'></div>
+    <div id="x4"><img id='img4' ></div>
+    <div id="x5"><img id='img5' ></div>
+	   <div id="x6"><img id='img6' ></div>
+    <div id="x7"><img id='img7' ></div>
+    <div id="x8"><img id='img8'></div>
+	<span id="tit"></span>
+</div>
+
+<div id="next">
+<img src="images/frwd.png" id="next_logo">
+</div>
+<div id="prev">
+<img src="images/bcwd.png" id="prev_logo">
+</div>
+</div>
+<hr>
+
+ 
+<div data-role="content" class="articles" id="article_one"> 
+<div id="img01" class='inside'><img  src="images/img1.jpg"></div>
+<div id="img02" class='inside'><img  src="images/img2.jpg"></div>
+<div id="img03" class='inside'><img  src="images/img3.jpg"></div>
+<div id="img04" class='inside'><img  src="images/img4.jpg"></div>
+</div>
+<div><hr></div>
+<div data-role="content" class="articles" id="article_two">
+<div id="img01" class='inside'><img  src="images/img1.jpg"></div>
+<div id="img02" class='inside'><img  src="images/img2.jpg"></div>
+<div id="img03" class='inside'><img  src="images/img3.jpg"></div>
+<div id="img04" class='inside'><img  src="images/img4.jpg"></div>
+</div>
+<div><hr></div>
+<div data-role="content" class="articles" id="article_three"> 
+<div id="img01" class='inside'><img  src="images/img1.jpg"></div>
+<div id="img02" class='inside'><img  src="images/img2.jpg"></div>
+<div id="img03" class='inside'><img src="images/img3.jpg"></div>
+<div id="img04" class='inside'><img  src="images/img4.jpg"></div>
+</div>
+</div>
+<div id="foot" data-role="footer"></div></div>
+<script> 
+$('#foot').html("<div class='last_div' id='last_first'><dl><dt>Useful links</dt><dd>"+
+"Help</dd><dd>Be Anonymous</dd></dl></div>"+
+"<div class='last_div' id='last_second'><dl><dt>Contact</dt>"+
+"<dd>Help</dd><dd>Be Anonymous</dd></dl></div>");
+$('a').buttonMarkup({ inline: true });
+$('a').buttonMarkup({ corners: false });
+$('a').buttonMarkup({ icon: "forward" });
+$('a').buttonMarkup({ iconPos: "left" });
+$('#article_one').before("<span class='grad1'>NATURE</span><hr>");
+$('#article_two').before("<span class='grad1'>TECHNOLOGY</span><hr>");
+$('#article_three').before("<span class='grad1'>RIGHTS</span><hr>");
+$(document).ready( function (){
+var news = '{"neww":[' +
+'{"title":"This is first news","back":"images/wooden_floor.jpg","color":"red" },' +
+'{"title":"This is second news","back":"images/diving.jpg","color":"red"  },' +
+'{"title":"This is third news","back":"images/sky_diving.jpg","color":"red"  }]}';
+
+obj = $.parseJSON(news);
+//alert(obj.neww[0].back);
+
+$("#demo").css("background","url('"+obj.neww[1].back+"')");
+$("#demo").css("background-size","100% 100%");});
+$("#demo").html("<div id='inter_text'><a href='http://www.youtube.com'>Reach us here</a></div>");
+var json;
+$(function(){
+    $ds = $('.fadein div');
+    $ds.hide().eq(0).show();
+    setInterval(function(){
+        $ds.filter(':visible').fadeOut(function(){
+            var $div = $(this).next('div');
+			 if ( $div.length == 0 ) {
+               $ds = $('.fadein div');
+			   $ds.eq(0).show();
+				
+            } else {
+                $div.fadeIn();
+            }
+			var temp=$div.attr('id');
+			temp=Number(temp.replace('x',''));
+			$('#tit').text(json.slide[temp].title);
+           
+        });
+    }, 4000);
+	
+});
+$('#next').hide();
+$('#prev').hide();
+$('#prev').click().html();
+
+
+$(".fadein").mouseover(function(){
+  $("#next").show();
+  $("#prev").show();
+  });
+  $(".fadein").mouseout(function(){
+  $("#next").hide()
+  $("#prev").hide();});
+  
+ $.ajax(
+			{
+				url:"out.json",
+				dataType:"text",
+				success:function(data){
+				json=$.parseJSON(data);
+				imagegrab(json);
+				},
+				error:function(){
+				alert("wrong file");
+				}
+			}
+			);
+			
+function  imagegrab(json)
+{
+   for(var i=0;i<9;i++)
+   {
+   
+      $('#img'+i).attr('src',json.slide[i].source);
+	 
+   }
+}
+</script>
+
+
+</body>
+</html>
